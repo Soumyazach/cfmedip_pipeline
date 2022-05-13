@@ -1,6 +1,6 @@
 # cfmedip_pipeline
 
-Analysis pipeline for cell-free MeDIP-seq used to classify Cancer and Healthy samples
+Analysis pipeline for cell-free MeDIP-seq used to classify different groups of plasma samples
 To submit to cluster with slurm workload manager, use sbatch submit.sh
 
 Prior to run, index files for bowtie need to be added to ref_files folder:
