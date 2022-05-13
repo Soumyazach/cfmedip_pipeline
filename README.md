@@ -20,10 +20,9 @@ Modify the get_targets(wildcards) depending on what rules you want to run
 Main Chromosome Unique Reads, Duplication plot, CpG Enrichment. 
 ### Rule Medips:
 Output: medips.rds file, wig file (can be uploaded on IGV browser to view the read counts and compare)
-medips.rds file important columns: chr, start, stop, rpkm (RPKM is a gene length normalized expression unit that is used for identifying the differentially expressed genes by comparing the RPKM values between different experimental conditions) 
+Important columns in medips.rds file: chr, start, stop, rpkm (RPKM is a gene length normalized expression unit that is used for identifying the differentially expressed genes by comparing the RPKM values between different experimental conditions) 
 ### Rule Group Plots:
-Plots to see if the samples cluster based on the groups
-Check if the option to limit DMRs to reference DMRs is selected or no. 
+Plots to see if the samples cluster based on the groups. Check if the option to limit DMRs to reference DMRs is selected or no. 
 Principal Component Analysis plot => PC1, PC2, PC3, PC4. Edit the group_plots script to include more PC component values. 
 Batch information is also considered for the PC plots to check if there is batch effect. 
 Hierarchical Clustering plot: Useful to see how the samples cluster together
