@@ -7,8 +7,9 @@ Rules, Outputs, Scripts
 Include the fastq file location, metasheet location, run name
 ### Metasheet:
 Cases, Controls, Reference_cases, reference_controls, type, class, batch 
+### Rules Trim, Align, Sort, Deduplicate: 
+Align rule should be run as medium job. Make sure the time is atleast 48 hours in the cluster.json file. 
 Modify the get_targets(wildcards) depending on what rules you want to run
-### Rules Trim, Align, Sort, Deduplicate: Align rule should be run as medium job. Make sure the time is atleast 48 hours in the cluster.json file
 ### Rule QC plots: Main Chromosome Unique Reads, Duplication plot, CpG Enrichment. 
 ### Rule Medips:
 Output: medips.rds file, wig file (can be uploaded on IGV browser to view the read counts and compare)
