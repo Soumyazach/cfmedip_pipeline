@@ -42,9 +42,9 @@ Volcano plots: logFC vs -logp plot: Blue regions are highly significant regions 
 Case control Heatmap:  Heatmap to see how well the reference cases and controls cluster together and see the significant DMRs(more significant DMRs - darker regions in heatmap).
 
 ### Rule DMRs
-Tissue Naive approach:
+#### Tissue Naive approach:
 The input to the DMRs rule includes all the DMRs in the cancer and plasma samples. We do not limit the regions. (In config file make sure restrict_up, restrict_down= "None"). 
-Tissue Limited approach:
+#### Tissue Limited approach:
 We limit the input to the rule to regions that are significantly differentially methylated in the tissue (from reference DMRs step)
 (restrict_up, restrict_down='' in config file) Apply different p value and logFC cut offs to the the refDMRs outputs and generate classification outputs for all the cases.
 We have 2 classification models:- 
