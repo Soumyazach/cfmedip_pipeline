@@ -16,7 +16,8 @@ Cases, Controls, Reference_cases, reference_controls, type, class, batch
 ### Rules Trim, Align, Sort, Deduplicate: 
 Align rule should be run as medium job. Make sure the time is atleast 48 hours in the cluster.json file. 
 Modify the get_targets(wildcards) depending on what rules you want to run
-### Rule QC plots: Main Chromosome Unique Reads, Duplication plot, CpG Enrichment. 
+### Rule QC plots:
+Main Chromosome Unique Reads, Duplication plot, CpG Enrichment. 
 ### Rule Medips:
 Output: medips.rds file, wig file (can be uploaded on IGV browser to view the read counts and compare)
 medips.rds file important columns: chr, start, stop, rpkm (RPKM is a gene length normalized expression unit that is used for identifying the differentially expressed genes by comparing the RPKM values between different experimental conditions) 
