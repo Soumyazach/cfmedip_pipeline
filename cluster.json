@@ -1,0 +1,82 @@
+{
+    "__default__":
+    {
+        "partition": "short",
+        "mem": "4G",
+        "time": "06:00:00"
+    },
+    "trim_and_fastqc":
+    {
+        "partition": "short",
+        "mem": "4G",
+        "time": "08:00:00"
+    },
+    "align":
+    {
+        "partition": "medium",
+        "time": "48:00:00",
+        "mem": "32G"
+    },
+    "DMRs":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "64G"
+    },
+    "coupling_set":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "32G"
+    },
+
+    "reference_DMRs":
+    {
+        "partition": "short",
+        "time": "10:00:00",
+        "mem": "64G"
+    },
+    "rms":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "64G"
+    },
+    "DMRs_leave_one_out":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "64G"
+    },
+    "medips":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "32G"
+    },
+    "group_plots":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "92G"
+    },
+
+    "homopolymers_list":
+    {
+        "partition": "medium",
+        "time": "32:00:00",
+        "mem": "32G"
+    },
+    "homopolymer_groups":
+    {
+        "partition": "short",
+        "time": "8:00:00",
+        "mem": "92G"
+    },
+    "plot":
+    {
+        "partition": "short",
+        "time": "6:00:00",
+        "mem": "8G"
+    }
+}

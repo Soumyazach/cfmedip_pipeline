@@ -1,0 +1,324 @@
+#file with sample annotations:
+# !! currently, samples in config.yaml and metasheet.csv need to list the same samples
+#  in the same order for some of the modules to work properly
+
+metasheet: 'metasheet.csv'
+
+#run name:
+run: 'cfMEDIP_'
+
+#number of iterations used for cross validation:
+iterations: 100
+
+#files used by MeDIPs for calucating CpG enrichment. To generate on the fly, set to ""
+genome_relH: ref_files/bsgenome.hsapiens.ucsc.hg19_relH.rds
+genome_GoGe: ref_files/bsgenome.hsapiens.ucsc.hg19_GoGe.rds
+
+#bed file specifying regions to remove from consideration
+blacklist: 'ref_files/hg19-blacklist.v2.bed'
+rms_exclude: 'ref_files/hg19-blacklist.v2.bed'
+
+#bed file specifying regions to exclude from the relative methylation score (rms) analysis
+#rms_exclude: 'ref_files/hg19-blacklist.v2_wbc.peaks.merged.bed'
+
+#up-DMRs in training set must overlap with these - if set to '', will calculate from reference_case and reference_control samples in metasheet. If set to "none", will not restrict:
+#restrict_up: 'cf_vs_lucap/LuCaP.q0.05.up.bed'
+restrict_up: ''
+#restrict_up: 'none'
+
+#down-DMRs in training set must overlap with these - if set to '', will calculate from reference_case and reference_control samples in metasheet. If set to "none", will not 
+#restrict_down: 'cf_vs_lucap/LuCaP.q0.05.down.bed'
+#restrict_down: 'none'
+restrict_down: ''
+
+
+samples:
+ NP02:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP02/NP02_CKDL210024264-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP02/NP02_CKDL210024264-1a_HVWWCDSX2_L1_2.fq.gz
+ NP06:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP06/NP06_CKDL210024268-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP06/NP06_CKDL210024268-1a_HVWWCDSX2_L1_2.fq.gz
+ NP08:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP08/NP08_CKDL210024270-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP08/NP08_CKDL210024270-1a_HVWWCDSX2_L1_2.fq.gz
+ NP09:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP09/NP09_CKDL210024271-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP09/NP09_CKDL210024271-1a_HVWWCDSX2_L1_2.fq.gz
+ NP100:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP100/NP100_CKDL210024362-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP100/NP100_CKDL210024362-1a_HVWV2DSX2_L1_2.fq.gz
+ NP103:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP103/NP103_CKDL210024365-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP103/NP103_CKDL210024365-1a_HVWV2DSX2_L1_2.fq.gz
+ NP104:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP104/NP104_CKDL210024366-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP104/NP104_CKDL210024366-1a_HVWV2DSX2_L1_2.fq.gz
+ NP105:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP105/NP105_CKDL210024367-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP105/NP105_CKDL210024367-1a_HVWV2DSX2_L1_2.fq.gz
+ NP106:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP106/NP106_CKDL210024368-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP106/NP106_CKDL210024368-1a_HVWV2DSX2_L1_2.fq.gz
+ NP109:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP109/NP109_CKDL210024371-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP109/NP109_CKDL210024371-1a_HVWV2DSX2_L1_2.fq.gz
+ NP10:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP10/NP10_CKDL210024272-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP10/NP10_CKDL210024272-1a_HVWWCDSX2_L1_2.fq.gz
+ NP111:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP111/NP111_CKDL210024373-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP111/NP111_CKDL210024373-1a_HVWV2DSX2_L1_2.fq.gz
+ NP113:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP113/NP113_CKDL210024375-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP113/NP113_CKDL210024375-1a_HVWV2DSX2_L1_2.fq.gz
+ NP114:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP114/NP114_CKDL210024376-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP114/NP114_CKDL210024376-1a_HVWV2DSX2_L1_2.fq.gz
+ NP117:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP117/NP117_CKDL210024379-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP117/NP117_CKDL210024379-1a_HVWV2DSX2_L1_2.fq.gz
+ NP11:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP11/NP11_CKDL210024273-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP11/NP11_CKDL210024273-1a_HVWWCDSX2_L1_2.fq.gz
+ NP121:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP121/NP121_CKDL210024383-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP121/NP121_CKDL210024383-1a_HVWV2DSX2_L1_2.fq.gz
+ NP127:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP127/NP127_CKDL210024389-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP127/NP127_CKDL210024389-1a_HVWV2DSX2_L2_2.fq.gz
+ NP129:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP129/NP129_CKDL210024391-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP129/NP129_CKDL210024391-1a_HVWV2DSX2_L2_2.fq.gz
+ NP131:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP131/NP131_CKDL210024393-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP131/NP131_CKDL210024393-1a_HVWV2DSX2_L2_2.fq.gz
+ NP136:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP136/NP136_CKDL210024398-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP136/NP136_CKDL210024398-1a_HVWV2DSX2_L2_2.fq.gz
+ NP137:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP137/NP137_CKDL210024399-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP137/NP137_CKDL210024399-1a_HVWV2DSX2_L2_2.fq.gz
+ NP138:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP138/NP138_CKDL210024400-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP138/NP138_CKDL210024400-1a_HVWV2DSX2_L2_2.fq.gz
+ NP139:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP139/NP139_CKDL210024401-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP139/NP139_CKDL210024401-1a_HVWV2DSX2_L2_2.fq.gz
+ NP14:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP14/NP14_CKDL210024276-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP14/NP14_CKDL210024276-1a_HVWWCDSX2_L1_2.fq.gz
+ NP141:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP141/NP141_CKDL210024403-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP141/NP141_CKDL210024403-1a_HVWV2DSX2_L2_2.fq.gz
+ NP145:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP145/NP145_CKDL210024407-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP145/NP145_CKDL210024407-1a_HVWV2DSX2_L2_2.fq.gz
+ NP149:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP149/NP149_CKDL210024411-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP149/NP149_CKDL210024411-1a_HVWV2DSX2_L2_2.fq.gz
+ NP150:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP150/NP150_CKDL210024412-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP150/NP150_CKDL210024412-1a_HVWV2DSX2_L2_2.fq.gz
+ NP151:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP151/NP151_CKDL210024413-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP151/NP151_CKDL210024413-1a_HVWV2DSX2_L2_2.fq.gz
+ NP153:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP153/NP153_CKDL210024415-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP153/NP153_CKDL210024415-1a_HVWV2DSX2_L2_2.fq.gz
+ NP154:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP154/NP154_CKDL210024416-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP154/NP154_CKDL210024416-1a_HVWV2DSX2_L2_2.fq.gz
+ NP155:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP155/NP155_CKDL210024417-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP155/NP155_CKDL210024417-1a_HVWV2DSX2_L2_2.fq.gz
+ NP15:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP15/NP15_CKDL210024277-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP15/NP15_CKDL210024277-1a_HVWWCDSX2_L1_2.fq.gz
+ NP167:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP167/NP167_CKDL210024429-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP167/NP167_CKDL210024429-1a_HVWV2DSX2_L3_2.fq.gz
+ NP164:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP164/NP164_CKDL210024426-1a_HVWV2DSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP164/NP164_CKDL210024426-1a_HVWV2DSX2_L2_2.fq.gz
+ NP169:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP169/NP169_CKDL210024431-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP169/NP169_CKDL210024431-1a_HVWV2DSX2_L3_2.fq.gz
+ NP177:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP177/NP177_CKDL210024439-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP177/NP177_CKDL210024439-1a_HVWV2DSX2_L3_2.fq.gz
+ NP17:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP17/NP17_CKDL210024279-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP17/NP17_CKDL210024279-1a_HVWWCDSX2_L1_2.fq.gz
+ NP187:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP187/NP187_CKDL210024449-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP187/NP187_CKDL210024449-1a_HVWV2DSX2_L3_2.fq.gz
+ NP193:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP193/NP193_CKDL210024455-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP193/NP193_CKDL210024455-1a_HVWV2DSX2_L3_2.fq.gz
+ NP195:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP195/NP195_CKDL210024457-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP195/NP195_CKDL210024457-1a_HVWV2DSX2_L3_2.fq.gz
+ NP196:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP196/NP196_CKDL210024458-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP196/NP196_CKDL210024458-1a_HVWV2DSX2_L3_2.fq.gz
+ NP197:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP197/NP197_CKDL210024459-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP197/NP197_CKDL210024459-1a_HVWV2DSX2_L3_2.fq.gz
+ NP199:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP199/NP199_CKDL210024461-1a_HVWV2DSX2_L3_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP199/NP199_CKDL210024461-1a_HVWV2DSX2_L3_2.fq.gz
+ NP19:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP19/NP19_CKDL210024281-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP19/NP19_CKDL210024281-1a_HVWWCDSX2_L1_2.fq.gz
+ NP20:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP20/NP20_CKDL210024282-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP20/NP20_CKDL210024282-1a_HVWWCDSX2_L1_2.fq.gz
+ NP22:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP22/NP22_CKDL210024284-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP22/NP22_CKDL210024284-1a_HVWWCDSX2_L1_2.fq.gz
+ NP24:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP24/NP24_CKDL210024286-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP24/NP24_CKDL210024286-1a_HVWWCDSX2_L1_2.fq.gz
+ NP25:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP25/NP25_CKDL210024287-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP25/NP25_CKDL210024287-1a_HVWWCDSX2_L1_2.fq.gz
+ NP27:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP27/NP27_CKDL210024289-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP27/NP27_CKDL210024289-1a_HVWWCDSX2_L1_2.fq.gz
+ NP39:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP39/NP39_CKDL210024301-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP39/NP39_CKDL210024301-1a_HVWWCDSX2_L1_2.fq.gz
+ NP40:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP40/NP40_CKDL210024302-1a_HVWWCDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP40/NP40_CKDL210024302-1a_HVWWCDSX2_L1_2.fq.gz
+ NP43:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP43/NP43_CKDL210024305-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP43/NP43_CKDL210024305-1a_HVWWCDSX2_L2_2.fq.gz
+ NP46:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP46/NP46_CKDL210024308-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP46/NP46_CKDL210024308-1a_HVWWCDSX2_L2_2.fq.gz
+ NP48:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP48/NP48_CKDL210024310-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP48/NP48_CKDL210024310-1a_HVWWCDSX2_L2_2.fq.gz
+ NP50:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP50/NP50_CKDL210024312-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP50/NP50_CKDL210024312-1a_HVWWCDSX2_L2_2.fq.gz
+ NP59:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP59/NP59_CKDL210024321-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP59/NP59_CKDL210024321-1a_HVWWCDSX2_L2_2.fq.gz
+ NP60:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP60/NP60_CKDL210024322-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP60/NP60_CKDL210024322-1a_HVWWCDSX2_L2_2.fq.gz
+ NP61:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP61/NP61_CKDL210024323-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP61/NP61_CKDL210024323-1a_HVWWCDSX2_L2_2.fq.gz
+ NP78:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP78/NP78_CKDL210024340-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP78/NP78_CKDL210024340-1a_HVWWCDSX2_L2_2.fq.gz
+ NP79:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP79/NP79_CKDL210024341-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP79/NP79_CKDL210024341-1a_HVWWCDSX2_L2_2.fq.gz
+ NP80:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP80/NP80_CKDL210024342-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP80/NP80_CKDL210024342-1a_HVWWCDSX2_L2_2.fq.gz
+ NP81:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP81/NP81_CKDL210024343-1a_HVWWCDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP81/NP81_CKDL210024343-1a_HVWWCDSX2_L2_2.fq.gz
+ NP86:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP86/NP86_CKDL210024348-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP86/NP86_CKDL210024348-1a_HVWV2DSX2_L1_2.fq.gz
+ NP98:
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP98/NP98_CKDL210024360-1a_HVWV2DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/placebo/raw_data/NP98/NP98_CKDL210024360-1a_HVWV2DSX2_L1_1.fq.gz
+ WBC_119:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_119/WBC_119_CKDL210005093-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_119/WBC_119_CKDL210005093-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_120:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_120/WBC_120_CKDL210005094-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_120/WBC_120_CKDL210005094-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_121:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_121/WBC_121_CKDL210005103-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_121/WBC_121_CKDL210005103-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_12:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_12/WBC_12_CKDL210004993-1a_HNTNYDSXY_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_12/WBC_12_CKDL210004993-1a_HNTNYDSXY_L1_2.fq.gz
+ WBC_13:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_13/WBC_13_CKDL210004994-1a_HNTNYDSXY_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_13/WBC_13_CKDL210004994-1a_HNTNYDSXY_L1_2.fq.gz
+ WBC_149:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_149/WBC_149_CKDL210005104-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_149/WBC_149_CKDL210005104-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_14:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_14/WBC_14_CKDL210005011-1a_H2TKVDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_14/WBC_14_CKDL210005011-1a_H2TKVDSX2_L2_2.fq.gz
+ WBC_156:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_156/WBC_156_CKDL210005105-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_156/WBC_156_CKDL210005105-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_159:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_159/WBC_159_CKDL210005106-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_159/WBC_159_CKDL210005106-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_19:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_19/WBC_19_CKDL210005012-1a_H2T3GDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_19/WBC_19_CKDL210005012-1a_H2T3GDSX2_L1_2.fq.gz
+ WBC_1:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_1/WBC_1_CKDL210004991-1a_H2TK5DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_1/WBC_1_CKDL210004991-1a_H2TK5DSX2_L1_2.fq.gz
+ WBC_20:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_20/WBC_20_CKDL210005013-1a_H2T3GDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_20/WBC_20_CKDL210005013-1a_H2T3GDSX2_L1_2.fq.gz
+ WBC_25:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_25/WBC_25_CKDL210005014-1a_H2T3GDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_25/WBC_25_CKDL210005014-1a_H2T3GDSX2_L1_2.fq.gz
+ WBC_31:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_31/WBC_31_CKDL210005079-1a_H2TK5DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_31/WBC_31_CKDL210005079-1a_H2TK5DSX2_L1_2.fq.gz
+ WBC_33:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_33/WBC_33_CKDL210005080-1a_H2TKFDSX2_L2_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_33/WBC_33_CKDL210005080-1a_H2TKFDSX2_L2_2.fq.gz
+ WBC_45:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_45/WBC_45_CKDL210005081-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_45/WBC_45_CKDL210005081-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_48:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_48/WBC_48_CKDL210005082-1a_H2TK5DSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_48/WBC_48_CKDL210005082-1a_H2TK5DSX2_L1_2.fq.gz
+ WBC_4:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_4/WBC_4_CKDL210004992-1a_HNTNYDSXY_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_4/WBC_4_CKDL210004992-1a_HNTNYDSXY_L1_2.fq.gz
+ WBC_50:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_50/WBC_50_CKDL210005099-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_50/WBC_50_CKDL210005099-1a_H2TKFDSX2_L1_2.fq.gz
+ WBC_54:
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_54/WBC_54_CKDL210005100-1a_H2TKFDSX2_L1_1.fq.gz
+     - /n/scratch3/users/s/sz166/bladder/raw_data/WBC_54/WBC_54_CKDL210005100-1a_H2TKFDSX2_L1_2.fq.gz
+ CC01:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC01/CC01_CKDL210002097-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC01/CC01_CKDL210002097-1a_HVHG3DSXY_L4_2.fq.gz
+ CC02:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC02/CC02_CKDL210002098-1a_HVFMHDSXY_L2_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC02/CC02_CKDL210002098-1a_HVFMHDSXY_L2_2.fq.gz
+ CC03:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC03/CC03_CKDL210002099-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC03/CC03_CKDL210002099-1a_HVHG3DSXY_L4_2.fq.gz
+ CC04:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC04/CC04_CKDL210002100-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC04/CC04_CKDL210002100-1a_HVHG3DSXY_L4_2.fq.gz
+ CC05:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC05/CC05_CKDL210002101-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC05/CC05_CKDL210002101-1a_HVHG3DSXY_L4_2.fq.gz
+ CC06:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC06/CC06_CKDL210002102-1a_HVFMHDSXY_L1_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC06/CC06_CKDL210002102-1a_HVFMHDSXY_L1_2.fq.gz
+ CC07:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC07/CC07_CKDL210002103-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC07/CC07_CKDL210002103-1a_HVHG3DSXY_L4_2.fq.gz
+ CC08:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC08/CC08_CKDL210002104-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC08/CC08_CKDL210002104-1a_HVHG3DSXY_L4_2.fq.gz
+ CC09:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC09/CC09_CKDL210002105-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC09/CC09_CKDL210002105-1a_HVHG3DSXY_L4_2.fq.gz
+ CC10:
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC10/CC10_CKDL210002106-1a_HVHG3DSXY_L4_1.fq.gz
+     -  /n/scratch3/users/s/sz166/kidney/raw_data/CC10/CC10_CKDL210002106-1a_HVHG3DSXY_L4_2.fq.gz
+
