@@ -1,7 +1,13 @@
 # cfmedip_pipeline
 
-### MeDIP Pipeline
-Rules, Outputs, Scripts
+Analysis pipeline for cell-free MeDIP-seq used to classify Cancer and Healthy samples
+To submit to cluster with slurm workload manager, use sbatch submit.sh
+
+Prior to run, index files for bowtie need to be added to ref_files folder:
+
+ref_files/indexes/hg19.1.bt2 ref_files/indexes/hg19.3.bt2 ref_files/indexes/hg19.rev.1.bt2 ref_files/indexes/hg19.2.bt2 ref_files/indexes/hg19.4.bt2 ref_files/indexes/hg19.rev.2.bt2
+
+### MeDIP Pipeline: Rules, Outputs, Scripts
 
 ### Config file:
 Include the fastq file location, metasheet location, run name
