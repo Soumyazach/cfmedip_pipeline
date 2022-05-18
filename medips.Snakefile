@@ -58,7 +58,7 @@ def get_targets(wildcards):
 	#rms-based score using reference DMRs:
 	ls.append("analysis/dmrs/" + config['run'] + "/rms/auc_curve_case.pdf")
 	ls.append("analysis/dmrs/" + config['run'] + "/reference/reference_DMRs.bed")
-	ls.append("analysis/dmrs/" + config['run'] + "/tissue_derived//p_0.001_logFC2.png")
+	ls.append("analysis/dmrs/" + config['run'] + "/tissue_derived/p_0.001_logFC2.png")
 	for sample in config["samples"]:
                 ls.append("analysis/bowtie2/%s/%s.unique_main_chr_reads.txt" % (sample, sample))
 	return ls
