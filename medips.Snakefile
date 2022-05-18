@@ -58,6 +58,7 @@ def get_targets(wildcards):
 	#rms-based score using reference DMRs:
 	ls.append("analysis/dmrs/" + config['run'] + "/rms/auc_curve_case.pdf")
 	ls.append("analysis/dmrs/" + config['run'] + "/reference/reference_DMRs.bed")
+	ls.append("analysis/dmrs/" + config['run'] + "/tissue_derived//p_0.001_logFC2.png")
 	for sample in config["samples"]:
                 ls.append("analysis/bowtie2/%s/%s.unique_main_chr_reads.txt" % (sample, sample))
 	return ls
@@ -385,23 +386,6 @@ rule DMRs:
 
 # perform leave-one-out cross validation on plasma classification
 
-rule tissue_derived:
-	input:
-		files=get_medips,
-		couplingset="analysis/couplingset/couplingset.rds",
-		ref_dmr= "analysis/dmrs/" + config['run'] + "/reference/reference_DMRs.bed",
-	output:
-		"analysis/dmrs/" + config['run'] + /tissue_derived/plots_0.05.png"
-
-	params:
-		meta=config['metasheet'],
-		blacklist=config['blacklist'],
-		run=config['run']
-	shell:
-		"""Rscript scripts/tissue_derived.R "{input.files}" analysis/dmrs/{params.run} {params.meta} {params.blacklist} {wildcards.sample} """
-
-
-
 rule DMRs_leave_one_out:
 
 	input:
@@ -476,5 +460,20 @@ rule rms:
 	shell:
 		""" sh scripts/subset_DMRs.sh {input.ref_DMRs} {params.exclude} analysis/dmrs/{params.run}/rms
 		Rscript scripts/rms_DMRs.R "{input.files}" {params.meta} analysis/dmrs/{params.run}/rms """
+rule tissue_derived:
+	input:
+		files=get_medips,
+		couplingset="analysis/couplingset/couplingset.rds",
+		ref_dmr= "analysis/dmrs/" + config['run'] + "/reference/reference_DMRs.bed",
+	output:
+		"analysis/dmrs/" + config['run'] + "/tissue_derived/p_0.001_logFC2.png"
+
+	params:
+		meta=config['metasheet'],
+		blacklist=config['blacklist'],
+		run=config['run']
+	shell:
+		"""Rscript scripts/tissue_derived.R "{input.files}" {input.couplingset} {input.ref_dmr} analysis/dmrs/{params.run} {params.meta} {params.blacklist}"""
+
 
 	
